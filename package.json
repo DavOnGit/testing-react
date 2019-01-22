@@ -1,0 +1,45 @@
+{
+  "name": "testing-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Davide G. Vozzi <davide.vozzi@gmail.com> (https://github.com/DavOnGit)",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --config ./webpack.config.js --mode development",
+    "test:unit": "mocha --require @babel/register --require ./test/helpers.js --require ./test/dom.js --require ignore-styles \"./src/**/*.spec.js\"",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "test:snapshot": "jest --config ./test/jest.config.json",
+    "test:snapshot:watch": "npm run test:snapshot -- --watch",
+    "test:cypress": "start-server-and-test start http://localhost:8080 cypress",
+    "cypress": "cypress run"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.3",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.5",
+    "chai": "4.2.0",
+    "cypress": "3.1.4",
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.7.1",
+    "ignore-styles": "5.0.1",
+    "jest": "23.6.0",
+    "jsdom": "13.1.0",
+    "mocha": "5.2.0",
+    "react-hot-loader": "4.6.3",
+    "react-test-renderer": "16.7.0",
+    "sinon": "7.2.3",
+    "start-server-and-test": "1.7.11",
+    "webpack": "4.29.0",
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "3.1.14"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "react": "16.7.0",
+    "react-dom": "16.7.0"
+  }
+}
