@@ -7,4 +7,7 @@ install:
   - yarn
 
 script:
-  - yarn test:unit && yarn test:snapshot && yarn test:cypress
+  - yarn test:unit -- --coverage && yarn test:snapshot -- --coverage && yarn test:cypress
+
+after_script:
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token yarn coveralls
